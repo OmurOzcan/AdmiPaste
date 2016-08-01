@@ -1,4 +1,4 @@
-host: 46.101.102.147
+host: localhost
 port: 5000
 
 mysql:

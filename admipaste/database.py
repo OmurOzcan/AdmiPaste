@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from admipaste import db
 import hashlib
 

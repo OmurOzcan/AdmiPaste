@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from admipaste import app, database
 from flask import request, redirect
 import json
