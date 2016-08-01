@@ -1,3 +1,5 @@
+#Save me as config.yml
+
 host: localhost
 port: 5000
 debug: false
