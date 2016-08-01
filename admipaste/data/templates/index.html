@@ -1,7 +1,27 @@
 {% include "_header.html" %}
+    {% if error %}
+        <span style="color: red;">Error: {{ error }}</span>
+    {% endif %}
     <form action="/api/submit" method="post" id="pasteform">
-        <input type="text" name="user" id="user" class="form-control" placeholder="Username (optional)"><br>
-        <textarea name="paste" id="pastebox" class="form-control" cols="100" rows="23" placeholder="Paste your file here..." onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"></textarea>
-        <input type="hidden" name="isBrowser" value="yes">
+        <div class="form-group row">
+            <div class="col-md-12">
+                <textarea name="paste" id="pastebox" class="form-control" cols="100" rows="18" placeholder="Paste your file here..." onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}" required></textarea>
+                <input type="hidden" name="isBrowser" value="yes">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-5">
+                <input type="text" name="user" id="user" class="form-control" placeholder="Username (optional)">
+            </div>
+            <div class="col-md-5">
+                <!--suppress HtmlFormInputWithoutLabel -->
+                <select name="language" id="languageselector" class="form-control">
+                    <option value="language-none">Select Language (Optional)</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <input type="submit" value="Submit paste." class="btn btn-info pull-right">
+            </div>
+        </div>
     </form>
 {% include "_footer.html" %}

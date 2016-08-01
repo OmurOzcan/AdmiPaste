@@ -1,4 +1,6 @@
 {% include "_header.html" %}
 <b>Paste by {{ paste[0] }}</b>
-<pre>{{ paste[1] }}</pre>
+<pre class="line-numbers">
+    <code class="language-{{ paste[2] }}">{{ paste[1] | e }}</code>
+</pre>
 {% include "_footer.html" %}

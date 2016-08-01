@@ -6,6 +6,10 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='admipaste.css') }}">
+
+    {% if paste %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='prism.css') }}">
+    {% endif %}
 </head>
 <body>
     <div class="container">
@@ -13,9 +17,5 @@
             <small>
                 <a href="/paste" id="seenewest">see the newest 20 pastes</a>
             </small>
-            </a>
-
-            {% if is_index %}
-                <a href="#!" id="pastesubmit" class="btn btn-info pull-right" onclick="document.getElementById('pasteform').submit();">Submit paste</a>
-            {% endif %}</h1>
+            </a></h1>
         <hr>

@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from flask import render_template, session, redirect
+from flask import render_template, session, redirect, request
 from admipaste import app, database
 
 
 @app.route('/')
 def index():
-    return render_template("index.html", is_index=True)
+    if request.args.get("error"):
+        return render_template("index.html", error=request.args.get("error"))
+    return render_template("index.html")
 
 
 @app.route('/paste/')

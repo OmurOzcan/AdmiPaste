@@ -10,18 +10,18 @@ def gen_visid(num_id):
 
 def get_paste(paste):
     db_cursor = db.cursor()
-    db_cursor.execute("SELECT user, paste FROM pastes WHERE vis_id = %s", [paste])
+    db_cursor.execute("SELECT user, paste, lang FROM pastes WHERE vis_id = %s", [paste])
 
     paste = db_cursor.fetchone()
 
     if paste is None:
-        paste = ("system", "Paste not found")
+        paste = ("system", "Paste not found", "none")
 
     db_cursor.close()
     return paste
 
 
-def save_paste(paste, user):
+def save_paste(paste, user, language):
     db_cursor = db.cursor()
     db_cursor.execute("SELECT COUNT(id) FROM pastes")
     pasteid = gen_visid(db_cursor.fetchone()[0] + 1)
@@ -29,8 +29,8 @@ def save_paste(paste, user):
     if not user:
         user = "anonymous"
 
-    db_cursor.execute("INSERT INTO pastes(paste, user, vis_id) VALUES (%s, %s, %s)",
-                      [paste, user, pasteid])
+    db_cursor.execute("INSERT INTO pastes(paste, user, vis_id, lang) VALUES (%s, %s, %s, %s)",
+                      [paste, user, pasteid, language])
     db.commit()
 
     db_cursor.close()

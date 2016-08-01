@@ -9,11 +9,17 @@ import json
 def submit():
     paste = request.form["paste"]
     user = request.form["user"]
+    language = request.form["language"]
 
     if request.form["isBrowser"] == "yes":
-        return redirect("/paste/%s" % database.save_paste(paste, user))
+        if not paste:
+            return redirect("/?error=Please fill everything")
+        return redirect("/paste/%s" % database.save_paste(paste, user, language))
 
-    return json.dumps({"ok": True, "pasteid": database.save_paste(paste, user)})
+    if not paste:
+        return json.dumps({"ok": False, "reason": "paste_empty"})
+
+    return json.dumps({"ok": True, "pasteid": database.save_paste(paste, user, language)})
 
 
 @app.route('/api/pastes')

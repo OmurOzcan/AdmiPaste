@@ -1,8 +1,20 @@
     <div style="text-align: center; color: gray"><br>
-        AdmiPaste 1.0.0 -- made by Admicos <br>
-        Probably will open-source later
+        <a href="https://github.com/Admicos/AdmiPaste">AdmiPaste</a> 1.1.0 -- made by Admicos
     </div>
     </div>
 
+    <script src="{{ url_for('static', filename='prism.js') }}"></script>
+    <script>
+        var languageSelector = document.getElementById("languageselector");
+
+        if (languageSelector != null) {
+            for (var language in Prism.languages) {
+                if (language !== "extend" && language !== "insertBefore" && language !== "DFS") { //I guess it has these "functions" side by side with Languages.
+                    languageSelector.innerHTML = languageSelector.innerHTML + "<option value='" + language + "'>" +
+                            language + "</option>";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
