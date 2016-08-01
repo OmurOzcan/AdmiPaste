@@ -5,6 +5,11 @@ from flask import request, redirect
 import json
 
 
+@app.route("/api")
+def docs():
+    return redirect("https://github.com/Admicos/AdmiPaste#api-documentation")
+
+
 @app.route('/api/submit', methods=["POST"])
 def submit():
     paste = request.form["paste"]
