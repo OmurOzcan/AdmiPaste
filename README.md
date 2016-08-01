@@ -12,7 +12,7 @@ A pastebin made in Python and Flask
 ## API Documentation
 
 ###`/api/submit` *POST*
-*params: **user** (optional), **paste**, **language** (optional)*
+*params: __user__ (optional), __paste__, __language__ (optional)*
 
 Submits a paste
 
