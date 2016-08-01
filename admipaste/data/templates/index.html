@@ -13,11 +13,16 @@
             <div class="col-md-5">
                 <input type="text" name="user" id="user" class="form-control" placeholder="Username (optional)">
             </div>
-            <div class="col-md-5">
+            <div class="col-md-3">
                 <!--suppress HtmlFormInputWithoutLabel -->
                 <select name="language" id="languageselector" class="form-control">
-                    <option value="language-none">Select Language (Optional)</option>
+                    <option value="text">Select Language (Optional)</option>
                 </select>
+            </div>
+            <div class="col-md-2">
+                <label for="unlist" style="font-weight: normal">
+                    <input type="checkbox" name="unlist" id="unlist" value="unlist"> Don't list this paste
+                </label>
             </div>
             <div class="col-md-2">
                 <input type="submit" value="Submit paste." class="btn btn-info pull-right">

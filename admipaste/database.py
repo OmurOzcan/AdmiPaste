@@ -21,7 +21,7 @@ def get_paste(paste):
     return paste
 
 
-def save_paste(paste, user, language):
+def save_paste(paste, user, language, unlist):
     db_cursor = db.cursor()
     db_cursor.execute("SELECT COUNT(id) FROM pastes")
     pasteid = gen_visid(db_cursor.fetchone()[0] + 1)
@@ -29,8 +29,13 @@ def save_paste(paste, user, language):
     if not user:
         user = "anonymous"
 
-    db_cursor.execute("INSERT INTO pastes(paste, user, vis_id, lang) VALUES (%s, %s, %s, %s)",
-                      [paste, user, pasteid, language])
+    if unlist:  # Can't think of a better way
+        unlist = 1
+    else:
+        unlist = 0
+
+    db_cursor.execute("INSERT INTO pastes(paste, user, vis_id, lang, unlist) VALUES (%s, %s, %s, %s, %s)",
+                      [paste, user, pasteid, language, unlist])
     db.commit()
 
     db_cursor.close()
@@ -39,13 +44,9 @@ def save_paste(paste, user, language):
 
 def get_newest(count):
     db_cursor = db.cursor()
-    db_cursor.execute("SELECT vis_id, user FROM pastes ORDER BY id DESC LIMIT %s", [count])
+    db_cursor.execute("SELECT vis_id, user, lang FROM pastes WHERE unlist = 0 ORDER BY id DESC LIMIT %s", [count])
 
     paste = db_cursor.fetchall()
 
     db_cursor.close()
     return paste
-
-
-def get_pastes_of(username):
-    return None

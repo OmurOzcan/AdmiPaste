@@ -15,16 +15,20 @@ def submit():
     paste = request.form["paste"]
     user = request.form["user"]
     language = request.form["language"]
+    unlist = request.form.get("unlist")
+
+    if unlist is None:
+        unlist = False
 
     if request.form["isBrowser"] == "yes":
         if not paste:
             return redirect("/?error=Please fill everything")
-        return redirect("/paste/%s" % database.save_paste(paste, user, language))
+        return redirect("/paste/%s" % database.save_paste(paste, user, language, unlist))
 
     if not paste:
         return json.dumps({"ok": False, "reason": "paste_empty"})
 
-    return json.dumps({"ok": True, "pasteid": database.save_paste(paste, user, language)})
+    return json.dumps({"ok": True, "pasteid": database.save_paste(paste, user, language, unlist)})
 
 
 @app.route('/api/pastes')
