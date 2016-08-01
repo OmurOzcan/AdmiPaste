@@ -1,0 +1,7 @@
+{% include "_header.html" %}
+    <form action="/api/submit" method="post" id="pasteform">
+        <input type="text" name="user" id="user" class="form-control" placeholder="Username (optional)"><br>
+        <textarea name="paste" id="pastebox" class="form-control" cols="100" rows="23" placeholder="Paste your file here..." onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"></textarea>
+        <input type="hidden" name="isBrowser" value="yes">
+    </form>
+{% include "_footer.html" %}

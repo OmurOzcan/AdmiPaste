@@ -1,0 +1,9 @@
+{% include "_header.html" %}
+<h2>The newest {{ count }} pastes:</h2>
+<ul>
+    {% for paste in pastes %}
+        <li><a href="/paste/{{ paste[0] }}">Paste {{ paste[0] }} by {{ paste[1] }}</a></li>
+    {% endfor %}
+
+</ul>
+{% include "_footer.html" %}

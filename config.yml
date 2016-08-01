@@ -1,0 +1,8 @@
+host: 46.101.102.147
+port: 5000
+
+mysql:
+  host: localhost
+  user: testman
+  pass:
+  name: admipaste

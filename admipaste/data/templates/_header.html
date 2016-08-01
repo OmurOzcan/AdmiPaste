@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admipaste.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1><a href="/" id="name">AdmiPaste
+            <small>
+                <a href="/paste" id="seenewest">see the newest 20 pastes</a>
+            </small>
+            </a>
+
+            {% if is_index %}
+                <a href="#!" id="pastesubmit" class="btn btn-info pull-right" onclick="document.getElementById('pasteform').submit();">Submit paste</a>
+            {% endif %}</h1>
+        <hr>
