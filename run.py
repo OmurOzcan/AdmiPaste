@@ -10,7 +10,7 @@ def main():
                     cfg["mysql"]["user"],
                     cfg["mysql"]["pass"],
                     cfg["mysql"]["name"])
-    apaste.run(cfg["host"], cfg["port"], debug=True)
+    apaste.run(cfg["host"], cfg["port"], debug=bool(cfg["debug"]))
 
     return 0
 
