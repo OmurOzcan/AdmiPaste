@@ -15,7 +15,9 @@ def get_paste(paste):
     paste = db_cursor.fetchone()
 
     if paste is None:
-        paste = ("system", "Paste not found", "none")
+        paste = ("system", "Paste not found", "none", False)
+    else:
+        paste = (paste[0], paste[1], paste[2], True)  # I can't right now
 
     db_cursor.close()
     return paste

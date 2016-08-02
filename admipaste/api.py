@@ -38,4 +38,5 @@ def newest():
 
 @app.route('/api/pastes/<string:pasteid>')
 def get(pasteid):
-    return json.dumps({"ok": True, "paste": database.get_paste(pasteid)})
+    paste = database.get_paste(pasteid)
+    return json.dumps({"ok": paste[3], "paste": paste})
