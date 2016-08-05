@@ -9,6 +9,7 @@ def gen_visid(num_id):
 
 
 def get_paste(paste):
+    db.ping(True)
     db_cursor = db.cursor()
     db_cursor.execute("SELECT user, paste, lang FROM pastes WHERE vis_id = %s", [paste])
 
@@ -24,6 +25,7 @@ def get_paste(paste):
 
 
 def save_paste(paste, user, language, unlist):
+    db.ping(True)
     db_cursor = db.cursor()
     db_cursor.execute("SELECT COUNT(id) FROM pastes")
     pasteid = gen_visid(db_cursor.fetchone()[0] + 1)
@@ -45,6 +47,7 @@ def save_paste(paste, user, language, unlist):
 
 
 def get_newest(count):
+    db.ping(True)
     db_cursor = db.cursor()
     db_cursor.execute("SELECT vis_id, user, lang FROM pastes WHERE unlist = 0 ORDER BY id DESC LIMIT %s", [count])
 
