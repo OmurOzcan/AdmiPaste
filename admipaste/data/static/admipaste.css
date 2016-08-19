@@ -2,6 +2,16 @@
     color: #333;
 }
 
-#seenewest {
+#seenewest,
+#darkToggle {
     color: #444;
+}
+
+#darkToggle {
+  position: relative;
+  top: .5em;
+}
+
+.prism-show-language-label {
+  margin-top: .6em;
 }

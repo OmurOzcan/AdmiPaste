@@ -1,0 +1,26 @@
+$background-color: #333;
+$color: #EEE;
+
+body,
+#seenewest,
+#name,
+#darkToggle,
+input:not(.btn),
+textarea,
+select {
+  background-color: $background-color !important;
+  color: $color !important;
+}
+
+code { //The prism line numbers were not cooperating with me, so i had to.
+  margin-left: -2em;
+}
+
+#darkToggle {
+  position: relative;
+  top: .5em;
+}
+
+.prism-show-language-label {
+  margin-top: .6em;
+}

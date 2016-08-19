@@ -5,17 +5,21 @@
     <title>Hello World</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='admipaste.css') }}">
 
-    {% if paste %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='prism.css') }}">
+    {% if dark %} <link rel="stylesheet" href="{{ url_for("static", filename="admipaste-dark.css") }}">
+    {% else %} <link rel="stylesheet" href="{{ url_for('static', filename='admipaste.css') }}">
     {% endif %}
+
+    {% if paste %}{% if dark %} <link rel="stylesheet" href="{{ url_for('static', filename='prism-dark.css') }}">
+    {% else %} <link rel="stylesheet" href="{{ url_for('static', filename='prism.css') }}">
+    {% endif %}{% endif %}
 </head>
 <body>
     <div class="container">
         <h1><a href="/" id="name">AdmiPaste
             <small>
                 <a href="/paste" id="seenewest">see the newest 20 pastes</a>
+                <span class="pull-right"><a href="#!" id="darkToggle">{% if dark %}Light{% else %}Dark{% endif %} Theme</a></span>
             </small>
             </a></h1>
         <hr>
