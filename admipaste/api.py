@@ -17,8 +17,9 @@ def submit():
     language = request.form["language"]
     unlist = request.form.get("unlist")
 
-    if unlist is None:
-        unlist = False
+    if unlist is None: unlist = False
+    if user is None: user = "anonymous"
+    if language is None: language = "text"
 
     if request.form["isBrowser"] == "yes":
         if not paste:
