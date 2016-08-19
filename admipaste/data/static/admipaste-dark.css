@@ -1,1 +1,1 @@
-body,#seenewest,#name,#darkToggle,input:not(.btn),textarea,select{background-color:#333 !important;color:#EEE !important}code{margin-left:-2em}#darkToggle{position:relative;top:.5em}.prism-show-language-label{margin-top:.6em}
+body,#seenewest,#name,#darkToggle,input:not(.btn),textarea,select,.footer{background-color:#333 !important;color:#EEE !important}code{margin-left:-2em}#darkToggle{position:relative;top:.5em}.prism-show-language-label{margin-top:.6em}#pastelist{list-style:none}.footer{text-align:center}

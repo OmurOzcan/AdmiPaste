@@ -15,3 +15,12 @@
 .prism-show-language-label {
   margin-top: .6em;
 }
+
+#pastelist {
+    list-style: none;
+}
+
+.footer {
+    color: gray;
+    text-align: center;
+}
