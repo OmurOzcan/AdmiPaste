@@ -3,10 +3,8 @@
     </div>
     </div>
 
-    {% if dark %}
-        <script src="{{ url_for('static', filename='prism-dark.js') }}"></script>
-    {% else %}
-        <script src="{{ url_for('static', filename='prism.js') }}"></script>
+    {% if dark %} <script src="{{ url_for('static', filename='prism-dark.js') }}"></script>
+    {% else %} <script src="{{ url_for('static', filename='prism.js') }}"></script>
     {% endif %}
 
     <script src="{{ url_for('static', filename='admipaste.js') }}"></script>
