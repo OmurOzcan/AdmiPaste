@@ -1,8 +1,19 @@
 {% include "_header.html" %}
 <h2>The newest {{ count }} pastes:</h2>
-<ul>
+<ul id="pastelist">
+    <li>
+        <div class="col-md-2"><b>Paste ID</b></div>
+        <div class="col-md-8"><b>Paste Author</b></div>
+        <div class="col-md-2"><b>Langauge</b></div>
+    </li>
     {% for paste in pastes %}
-        <li><a href="/paste/{{ paste[0] }}">Paste {{ paste[0] }} by {{ paste[1] }} (Language: {{ paste[2] }})</a></li>
+        <li>
+            <a href="/paste/{{ paste[0] }}">
+                <div class="col-md-2">{{ paste[0] }}</div>
+                <div class="col-md-8">{{ paste[1] }}</div>
+                <div class="col-md-2">{{ paste[2] }}</div>
+            </a>
+        </li>
     {% endfor %}
 </ul>
 {% include "_footer.html" %}
