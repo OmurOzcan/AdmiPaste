@@ -1,0 +1,14 @@
+$background-color: #333;
+$color: #EEE;
+
+body,
+#seenewest,
+#name,
+#darkToggle {
+  background-color: $background-color;
+  color: $color;
+}
+
+code { //The prism line numbers were not cooperating with me, so i had to.
+  margin-left: -2em;
+}
