@@ -6,16 +6,12 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
 
-    {% if dark %}
-        <link rel="stylesheet" href="{{ url_for("static", filename="admipaste-dark.css") }}">
-    {% else %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='admipaste.css') }}">
+    {% if dark %} <link rel="stylesheet" href="{{ url_for("static", filename="admipaste-dark.css") }}">
+    {% else %} <link rel="stylesheet" href="{{ url_for('static', filename='admipaste.css') }}">
     {% endif %}
 
-    {% if paste %}{% if dark %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='prism-dark.css') }}">
-    {% else %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='prism.css') }}">
+    {% if paste %}{% if dark %} <link rel="stylesheet" href="{{ url_for('static', filename='prism-dark.css') }}">
+    {% else %} <link rel="stylesheet" href="{{ url_for('static', filename='prism.css') }}">
     {% endif %}{% endif %}
 </head>
 <body>

@@ -12,3 +12,8 @@ body,
 code { //The prism line numbers were not cooperating with me, so i had to.
   margin-left: -2em;
 }
+
+#darkToggle {
+  position: relative;
+  top: .5em;
+}
