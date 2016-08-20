@@ -11,3 +11,7 @@
   position: relative;
   top: .5em;
 }
+
+.prism-show-language-label {
+  margin-top: .6em;
+}

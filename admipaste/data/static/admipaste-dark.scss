@@ -4,9 +4,12 @@ $color: #EEE;
 body,
 #seenewest,
 #name,
-#darkToggle {
-  background-color: $background-color;
-  color: $color;
+#darkToggle,
+input:not(.btn),
+textarea,
+select {
+  background-color: $background-color !important;
+  color: $color !important;
 }
 
 code { //The prism line numbers were not cooperating with me, so i had to.
@@ -16,4 +19,8 @@ code { //The prism line numbers were not cooperating with me, so i had to.
 #darkToggle {
   position: relative;
   top: .5em;
+}
+
+.prism-show-language-label {
+  margin-top: .6em;
 }
