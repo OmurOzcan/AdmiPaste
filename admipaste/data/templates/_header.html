@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    {% if paste %} <title>Paste by {{ paste[0] }} | AdmiPaste</title>
+    {% else %} <title>AdmiPaste</title>
+    {% endif %}
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     {% if dark %} <link rel="stylesheet" href="{{ url_for("static", filename="admipaste-dark.css") }}">
     {% else %} <link rel="stylesheet" href="{{ url_for('static', filename='admipaste.css') }}">
